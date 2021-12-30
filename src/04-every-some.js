@@ -21,7 +21,9 @@ const ghostPokemonData = require("../data/ghostPokemon_data");
  * > true
  *
  */
-function checkForType() {}
+function checkForType(pokemonArr, type) {
+  return pokemonArr.some((pokemon) => pokemon.type.includes(type));
+}
 
 /**
  *
@@ -47,7 +49,9 @@ function checkForType() {}
  * > true
  *
  */
-function checkForTypeWeakness() {}
+function checkForTypeWeakness(pokemonArr, type = 'dragon') {
+  return pokemonArr.some((pokemon) => pokemon.weaknesses.includes(type));
+}
 
 /**
  *
@@ -69,7 +73,9 @@ function checkForTypeWeakness() {}
  * > true
  *
  */
-function checkIfAllAreCertainType() {}
+function checkIfAllAreCertainType(pokemonArr, type) {
+  return pokemonArr.every((pokemon) => pokemon.type.includes(type) );
+}
 
 /**
  *
@@ -91,7 +97,9 @@ function checkIfAllAreCertainType() {}
  * > true
  *
  */
-function areAllStrongAgainstType() {}
+function areAllStrongAgainstType(pokemonArr, type) {
+  return pokemonArr.every((pokemon) => pokemon.strongAgainst.includes(type) )
+}
 
 /**
  *
@@ -116,7 +124,9 @@ function areAllStrongAgainstType() {}
  * > true
  *
  */
-function checkForMove() {}
+function checkForMove(pokemonArr, moveA) {
+  return pokemonArr.some((pokemon) => pokemon.moves.some((move) => move.name.includes(moveA)) )
+}
 
 module.exports = {
   checkForType,

@@ -1,5 +1,6 @@
 const examplePokemonData = require("../data/pokemon_data.js");
 const ghostPokemonData = require("../data/ghostPokemon_data");
+const pokemon = require("../data/pokemon_data.js");
 
 /**
  *
@@ -19,7 +20,11 @@ const ghostPokemonData = require("../data/ghostPokemon_data");
  * ^^^ This is not the complete list of names, but you get the idea ^^^
  *
  */
-function getPokemonNames(pokemonArr) {}
+function getPokemonNames(pokemonArr) {
+  if (pokemonArr.length === 0) throw 'array is empty'
+
+  return pokemonArr.map((pokemon) => pokemon.name)
+}
 
 /**
  *
@@ -72,7 +77,12 @@ function getPokemonNames(pokemonArr) {}
   ....                        //For the sake of space, I won't include the rest of them.
  * ]
  */
-function addCaughtProperty(pokemonArr) {}
+function addCaughtProperty(pokemonArr) {
+  if (pokemonArr.length === 0) throw 'array is empty'
+
+  pokemonArr.map((pokemon) => pokemon.caught = false)
+  return pokemonArr
+}
 
 /**
  *
@@ -86,8 +96,8 @@ function addCaughtProperty(pokemonArr) {}
  * 
  * * addAnyProperty
  * 
- * *This one is similar to the last one, but the key value pair can be anything.
- * *Whatever key and value are passed in as arguments, those will be the new key value pair added to each object in the array.
+ * * This one is similar to the last one, but the key value pair can be anything.
+ * * Whatever key and value are passed in as arguments, those will be the new key value pair added to each object in the array.
  *
  * Returns an array of pokemon with an added key value pair. Should make use of .map
  * If pokemon array is empty, throw an error.
@@ -124,7 +134,12 @@ function addCaughtProperty(pokemonArr) {}
   ....                      //For the sake of space, I won't include the rest of them.
  * ]
  */
-function addAnyProperty() {}
+function addAnyProperty(pokemonArr, key, value) {
+  if (pokemonArr.length === 0) throw 'array is empty'
+
+  pokemonArr.map((pokemon) => pokemon[key] = value)
+  return pokemonArr
+}
 
 module.exports = {
   getPokemonNames,

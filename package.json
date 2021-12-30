@@ -1,8 +1,13 @@
 {
   "dependencies": {
-    "jest": "^27.1.1"
+    "jest": "^27.1.1",
+    "npm-watch": "^0.11.0"
+  },
+  "watch": {
+    "test": "{src,test}/*.js"
   },
   "scripts": {
-    "test": "jest --runInBand"
+    "test": "jest --runInBand",
+    "watch": "npm-watch"
   }
 }

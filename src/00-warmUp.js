@@ -26,7 +26,12 @@ let numberArr = [3, 5, 8, 4, 9];
  * > [4, 6, 9, 5, 10]
  *
  */
-function plusOne() {}
+function plusOne(nums) {
+  const newNums = nums.map((num) => {
+    return num + 1;
+  })
+  return newNums;
+}
 
 /**
  *
@@ -50,7 +55,9 @@ function plusOne() {}
  * > [6, 10, 16, 8, 18]
  *
  */
-function timesTwo() {}
+function timesTwo(nums) {
+  return nums.map((num) => num * 2)
+}
 
 /**
  *
@@ -74,7 +81,9 @@ function timesTwo() {}
  * > [3, 5, 9]
  *
  */
-function filterForOdds() {}
+function filterForOdds(nums) {
+  return nums.filter((num) => num % 2 === 1)
+}
 
 /**
  *
@@ -112,7 +121,14 @@ function filterForOdds() {}
  * > [8, 4]
  *
  */
-function filterOddsOrEvens() {}
+function filterOddsOrEvens(nums, parity) {
+  return nums.filter((num) => {
+    if (parity.toLowerCase() === 'even') {
+      return num % 2 === 0;
+    }
+    return num % 2 !== 0
+  })
+}
 
 /**
  *
@@ -142,7 +158,9 @@ function filterOddsOrEvens() {}
  * > 9
  *
  */
-function findTargetNum() {}
+function findTargetNum(nums, number) {
+  return nums.find((num) => num === number)
+}
 
 /**
  *
@@ -175,7 +193,10 @@ function findTargetNum() {}
  * > false
  *
  */
-function isEveryElTheSame() {}
+function isEveryElTheSame(arr) {
+  const comp = arr[0];
+  return arr.every((element) => element === comp)
+}
 
 /**
  *
@@ -204,7 +225,9 @@ function isEveryElTheSame() {}
  * > true
  *
  */
-function areSomeEqualToInput() {}
+function areSomeEqualToInput(arr, value) {
+  return arr.some((element) => element === value)
+}
 
 module.exports = {
   plusOne,
